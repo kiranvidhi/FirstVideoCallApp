@@ -62,6 +62,7 @@ localStream.init(()=>{
     enableUiControls(localStream);
     localStreams.camera.stream = localStream;
     localStreams.camera.id = uid;
+    console.log(localStreams);
 }, handleError);
 }, handleError);
 
@@ -99,7 +100,7 @@ function leaveChannel() {
     localStreams.camera.stream.stop() // stop the camera stream playback
     client.unpublish(localStreams.camera.stream); // unpublish the camera stream
     localStreams.camera.stream.close(); // clean up and close the camera stream
-    $("#remote-streams").empty() // clean up the remote feeds
+    $("#remote-container").empty() // clean up the remote feeds
     //disable the UI elements
     $("#exit-btn").prop("disabled", true);
     // hide the mute/no-video overlays
