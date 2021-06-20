@@ -29,6 +29,17 @@ let client = AgoraRTC.createClient({
     codec: "vp8",
 });
 
+var localStreams = {
+  camera: {
+    id: "",
+    stream: {}
+  },
+  screen: {
+    id: "",
+    stream: {}
+  }
+};
+
 client.init("0adf5b14219840e69ab936e11b3e4465", function() {
     console.log("client initialized");
 }, function(err) {
@@ -36,7 +47,7 @@ client.init("0adf5b14219840e69ab936e11b3e4465", function() {
 });
 
 // Join a channel
-client.join("0060adf5b14219840e69ab936e11b3e4465IABIYPn+T4iIVpyBWSSbKj2KeTZgQ5Vs6EVECWDXC26XF0OQEggAAAAAEABFAsi6CiXPYAEAAQAJJc9g", "myChannel", null, (uid)=>{
+client.join("0060adf5b14219840e69ab936e11b3e4465IACkmEtSvvXGV38u/bvGjVMJPVgVBtDIgAJ9jTBSAIRFCbe8CPUAAAAAEABlU0aL90/QYAEAAQD2T9Bg", "myChannel2", null, (uid)=>{
   // Create a local stream
   let localStream = AgoraRTC.createStream({
     audio: true,
@@ -48,6 +59,9 @@ localStream.init(()=>{
     localStream.play("me");
     // Publish the local stream
     client.publish(localStream, handleError);
+    enableUiControls(localStream);
+    localStreams.camera.stream = localStream;
+    localStreams.camera.id = uid;
 }, handleError);
 }, handleError);
 
@@ -77,3 +91,19 @@ client.on("peer-leave", function(evt){
     stream.close();
     removeVideoStream(streamId);
 });
+
+function leaveChannel() {
+
+  client.leave(function() {
+    console.log("client leaves channel");
+    localStreams.camera.stream.stop() // stop the camera stream playback
+    client.unpublish(localStreams.camera.stream); // unpublish the camera stream
+    localStreams.camera.stream.close(); // clean up and close the camera stream
+    $("#remote-streams").empty() // clean up the remote feeds
+    //disable the UI elements
+    $("#exit-btn").prop("disabled", true);
+    // hide the mute/no-video overlays
+  }, function(err) {
+    console.log("client leave failed ", err); //error handling
+  });
+}
