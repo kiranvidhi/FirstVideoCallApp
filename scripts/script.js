@@ -70,7 +70,7 @@ client.init("0adf5b14219840e69ab936e11b3e4465", function() {
 });
 
 // Join a channel
-client.join("006ab79c1d808104e05ac417e0ec640aabbIAAoFyVLSmML3B6bSvLpH81+xRtfidVdDYHouWarehs+4EOQEggAAAAAEACqPfBqpOPWYAEAAQCj49Zg", "myChannel", null, (uid)=>{
+client.join("0060adf5b14219840e69ab936e11b3e4465IAA0RSJkMPtEwFxAKt1Y5iP/CpD135WFPcIj7DP5MTpnFEOQEggAAAAAEAAm+nFWgC7YYAEAAQCALthg", "myChannel", null, (uid)=>{
   // Create a local stream
   let localStream = AgoraRTC.createStream({
     audio: true,
