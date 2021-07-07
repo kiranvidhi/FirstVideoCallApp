@@ -1,9 +1,9 @@
-
 let pubNub;
 let channelName;
 let UID;
 let user;
 
+//initialize the pubnub client.
 function initPubNub(pubKey, subKey, uid, channel, username) {
   console.log(pubKey, subKey)
   pubNub = new PubNub({
@@ -14,6 +14,7 @@ function initPubNub(pubKey, subKey, uid, channel, username) {
       ssl: true
   });
 
+//listens to the messages published by some client
   pubNub.addListener({
       status: function(statusEvent) {
           if (statusEvent.category === "PNConnectedCategory") {
@@ -23,7 +24,13 @@ function initPubNub(pubKey, subKey, uid, channel, username) {
       message: function(msg) {
           console.log(msg);
           if (msg.message.uuid != UID) {
-              addRemoteMsg(msg.message.uuid, msg.message.description, msg.message.title)
+              if(msg.message.description==="remote user has shared screen"){
+                otherScreenShareActiveStatus();
+              }  else if(msg.message.description==="remote user has stopped sharing screen"){
+                otherScreenShareInactiveStatus();
+              } else{
+                addRemoteMsg(msg.message.uuid, msg.message.description, msg.message.title);
+              }
           } else {
               console.log('message sent successfully to channel');
           }
@@ -44,7 +51,7 @@ function initPubNub(pubKey, subKey, uid, channel, username) {
   UID = uid;
   user=username;
 }
-
+//create a method to publish the messages.
 function publishMessage(message, callback) {
   var msgConfig = {
       channel : channelName,

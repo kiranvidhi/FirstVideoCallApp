@@ -51,7 +51,7 @@ h1,h2,h3{
 }
 
 
-/* Download Buttons */
+/* Download Button */
 
 .download-button{
   margin:6% 3% 5% 0;
@@ -66,6 +66,7 @@ h1,h2,h3{
   right:30%;
   height:auto;
   border-radius: 15%;
+  z-index: 1;
 }
 
 #login{
@@ -73,10 +74,7 @@ h1,h2,h3{
   padding: 3% 2%;
 }
 
-.webrtc-login-btn{
-  margin-top: 30px;
-  font-weight:bold;
-}
+
 .login-column{
   padding: 3% 2%;
 }
@@ -92,30 +90,19 @@ h1,h2,h3{
 
 /* Reviews */
 
-#testimonials{
+#reviews{
   background-color: #77ACF1;
   color:#04009A;
 }
 
-.testimonial-image{
+.reviews-image{
   width:20%;
   border-radius: 100%;
   margin:20px;
 }
-.testimonial-text{
+.reviews-text{
   font-size: 3rem;
   line-height: 1.5;
-}
-
-
-@media (max-width:991px){
-  #title{
-    text-align: center;
-  }
-  .title-image{
-    position: static;
-    transform: rotate(0);
-  }
 }
 
 
@@ -127,23 +114,61 @@ h1,h2,h3{
   padding: 2% 10% 5%;
 }
 
-.skill-row{
+.feature-row{
   width : 50%;
   margin: 100px auto 100px auto;
   text-align: left;
 }
 
-.computer{
-  width: 50%;
+.feature-row .video-call_img{
+  width:60%;
   float: left;
   margin-right: 50px;
   border-radius: 100%;
 }
-.Management{
-  width: 50%;
+.feature-row .chat_img{
+  width:60%;
   float: right;
   margin-left: 50px;
   margin-top: 20px;
   border-radius: 100%;
 
+}
+
+.feature-row .share_screen{
+  width:60%;
+  float: left;
+  margin-top: 50px;
+  margin-right: 50px;
+  border-radius: 100%;
+}
+.feature-row h3{
+  padding-top: 50px;
+  padding-bottom: 5px;
+}
+
+/* about us */
+
+#about-us{
+  text-align: center;
+  color:#77ACF1;
+  background-color: #fff;
+  padding-top: 50px;
+}
+
+.footer-icon{
+  margin:20px 10px;
+  text-shadow: 1px 1px 1px #ccc;
+  font-size: 1.5em;
+}
+
+
+@media (max-width:991px){
+  #title{
+    text-align: center;
+  }
+  .title-image{
+    position: static;
+    transform: rotate(0);
+  }
 }

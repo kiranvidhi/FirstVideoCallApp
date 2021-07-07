@@ -1,3 +1,5 @@
+//chatToggleBtn, chat_fullscreen, chatIcon, chatTextInput, chatUi_send are the
+//ids taken from the index.html file.
 const chatToggleBtn = $('#chatToggleBtn');
 const chatMsgWindow = $('#chat_fullscreen');
 const chatIcon = $('#chatIcon');
@@ -72,7 +74,7 @@ function addRemoteMsg(uid, msg, username) {
   chatMsgWindow.append(
     $('<div/>', {'class': 'chat_msg_item chat_msg_item_remote_user'}).append(
       $('<div/>', {'class': 'chat_avatar'}).append(
-         // $('<img/>', {'src': 'https://res.cloudinary.com/dqvwa7vpe/image/upload/v1496415051/avatar_ma6vug.jpg'})
+          $('<img/>', {'src': 'https://www.pinclipart.com/picdir/middle/95-958614_man-icon-person-logo-png-clipart.png'})
       )
     ).append(
       $('<span/>').append(username+"\t "+currentTime).append('</br>')
@@ -97,5 +99,11 @@ function sendLocalMsg() {
     addLocalMsg(msg);
     textarea.value = ""; // after the message is sent clear the text area.
     resizeTextArea();
+  })
+}
+
+function sendScreenShareMessage(message){
+  publishMessage(message,function(){
+    console.log(message);
   })
 }

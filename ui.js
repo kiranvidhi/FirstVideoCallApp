@@ -1,7 +1,10 @@
+//creaate a method which enables the ui controls and toggles them.
 function enableUiControls(localStream) {
   $("#mic-btn").prop("disabled", false);
   $("#video-btn").prop("disabled", false);
+  $("#screen-share-btn").prop("disabled", false);
   $("#exit-btn").prop("disabled", false);
+
 
   $("#mic-btn").click(function(){
     toggleMic(localStream);
@@ -11,8 +14,40 @@ function enableUiControls(localStream) {
     toggleVideo(localStream);
   });
 
+  $("#screen-share-btn").click(function(){
+    toggleScreenShareBtn(); // set screen share button icon
+    $("#screen-share-btn").prop("disabled",true); // disable the button on click
+    if(myScreenShareActive){
+      stopScreenShare();
+    } else {
+      var agoraAppId = "0adf5b14219840e69ab936e11b3e4465";
+      var channelName = "myChannel";
+      var token = "0060adf5b14219840e69ab936e11b3e4465IADQdSk7QCeZbXomMs+h5Sqvv5ndTnHMIzaJbo9n09+0VUOQEggAAAAAEAAltn4OOzDnYAEAAQA6MOdg";
+      var uid = $("#form-uid").val();
+      initScreenShare(agoraAppId, channelName, token, null);
+    }
+  });
+// Query the container to which the screen-share-container belongs.
+const elem = document.querySelector('#screen-share-container');
+
+//add an event listener to the screen share element.
+elem.addEventListener("click", function(e) {
+  toggleFullScreen();
+}, false);
+
+function toggleFullScreen() {
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch(err => {
+      alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}
+
   $("#exit-btn").click(function(){
-    alert("So sad to see you leave the channel!");
+    alert("So sad to see you leave the room!");
     leaveChannel();
   });
 }
@@ -27,6 +62,12 @@ function toggleVisibility(elementID, visible) {
     $(elementID).attr("style", "display:none");
   }
 }
+
+function toggleScreenShareBtn() {
+  $('#screen-share-btn').toggleClass('btn-danger');
+  $('#screen-share-icon').toggleClass('fa-share-square').toggleClass('fa-times-circle');
+}
+
 
 function toggleMic(localStream) {
 toggleBtn($("#mic-btn")); // toggle button colors
