@@ -29,8 +29,6 @@ function addScreenStream(elementId){
         let streamDiv = document.createElement("div");
         // Assigns the elementId to the div.
         streamDiv.id = elementId;
-        // Takes care of the lateral inversion
-        streamDiv.style.transform = "rotateY(180deg)";
         // Adds the div to the container.
         screenContainer.appendChild(streamDiv);
         console.log("Hello, I am in add screen str");
@@ -206,6 +204,7 @@ function joinChannelAsScreenShare(channelName, uid, token) {
       video: false,
       screen: true, // screen stream
       mediaSource:  'screen', // Firefox: 'screen', 'application', 'window' (select one)\
+      mirror: false,
     });
     screenStream.cameraId=1001;
     screenStream.setScreenProfile(screenVideoProfile); // set the profile of the screen

@@ -22,7 +22,6 @@ function enableUiControls(localStream) {
     } else {
       var agoraAppId = "c52eafb36b1642eab50b88c3fefbd26a";
       var channelName = "myChannel1";
-      // var token = "0060adf5b14219840e69ab936e11b3e4465IADQdSk7QCeZbXomMs+h5Sqvv5ndTnHMIzaJbo9n09+0VUOQEggAAAAAEAAltn4OOzDnYAEAAQA6MOdg";
       var uid = $("#form-uid").val();
       initScreenShare(null, agoraAppId, channelName, null);
     }
