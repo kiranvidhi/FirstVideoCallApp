@@ -99,7 +99,7 @@ client.on("unmute-video", function (evt) {
 
 //create a function to initialize the client
  function clientInit(){
-   client.init("0adf5b14219840e69ab936e11b3e4465", function() {
+   client.init("c52eafb36b1642eab50b88c3fefbd26a", function() {
        console.log("client initialized");
    }, function(err) {
        console.log("client init failed ", err);
@@ -108,7 +108,7 @@ client.on("unmute-video", function (evt) {
 
 function joinChannel(){
 // Join a channel
-client.join("0060adf5b14219840e69ab936e11b3e4465IADQdSk7QCeZbXomMs+h5Sqvv5ndTnHMIzaJbo9n09+0VUOQEggAAAAAEAAltn4OOzDnYAEAAQA6MOdg", "myChannel", null, (uid)=>{
+client.join(null, "myChannel1", null, (uid)=>{
   // Create a local stream
   let localStream = AgoraRTC.createStream({
     audio: true,
@@ -181,12 +181,12 @@ client.on("peer-leave", function(evt){
 
 // SCREEN SHARING
 //Initilize the screen client
-function initScreenShare(agoraAppId, channelName, token, uid) {
+function initScreenShare(token,agoraAppId, channelName, uid) {
   screenClient.init(agoraAppId, function () {
     console.log("AgoraRTC screenClient initialized");
     myScreenShareActive = true;
     sendScreenShareMessage("remote user has shared screen");
-    joinChannelAsScreenShare(channelName, token, uid);
+    joinChannelAsScreenShare(channelName, uid, token);
     // TODO: add logic to swap button
   }, function (err) {
     console.log("[ERROR] : AgoraRTC screenClient init failed", err);
@@ -194,7 +194,7 @@ function initScreenShare(agoraAppId, channelName, token, uid) {
 }
 
 //create a method for the screen client to join the channel
-function joinChannelAsScreenShare(channelName, token, uid) {
+function joinChannelAsScreenShare(channelName, uid, token) {
 
   screenClient.join(token, channelName, uid, function(uid) {
    console.log(uid);

@@ -20,11 +20,11 @@ function enableUiControls(localStream) {
     if(myScreenShareActive){
       stopScreenShare();
     } else {
-      var agoraAppId = "0adf5b14219840e69ab936e11b3e4465";
-      var channelName = "myChannel";
-      var token = "0060adf5b14219840e69ab936e11b3e4465IADQdSk7QCeZbXomMs+h5Sqvv5ndTnHMIzaJbo9n09+0VUOQEggAAAAAEAAltn4OOzDnYAEAAQA6MOdg";
+      var agoraAppId = "c52eafb36b1642eab50b88c3fefbd26a";
+      var channelName = "myChannel1";
+      // var token = "0060adf5b14219840e69ab936e11b3e4465IADQdSk7QCeZbXomMs+h5Sqvv5ndTnHMIzaJbo9n09+0VUOQEggAAAAAEAAltn4OOzDnYAEAAQA6MOdg";
       var uid = $("#form-uid").val();
-      initScreenShare(agoraAppId, channelName, token, null);
+      initScreenShare(null, agoraAppId, channelName, null);
     }
   });
 // Query the container to which the screen-share-container belongs.
