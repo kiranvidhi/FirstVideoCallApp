@@ -120,7 +120,7 @@
       font-family: 'Roboto';
       font-weight: 500;
       color: #f3f3f3;
-      height: 60px;
+      height: 10%;
       border:2px solid blue;
       background: #42a5f5;
       border-top-left-radius: 10px;
@@ -133,7 +133,7 @@
   }
 
 #chat_fullscreen{
-  height:600px;
+  height:100%;
   border:2px solid black;
 }
 
@@ -143,7 +143,7 @@
     -webkit-animation: zoomIn .2s cubic-bezier(.42, 0, .58, 1);
     animation: zoomIn .2s cubic-bezier(.42, 0, .58, 1);
     width: 600px;
-    height:550px;
+    height:72%;
   }
   .is-hide{
     opacity: 0
@@ -170,14 +170,14 @@
     resize: none !important;
     font-size: 20px;
     font-weight: 500;
-    min-height: 30px;
-    max-height: 50px;
+    min-height: 50%;
+    max-height: 60%;
     overflow: auto;
   }
 
   .chatUi_field {
     width: 600px;
-    height: 70px;
+    height: 13%;
     display: inline-block;
     text-align: center;
     background: #fff;
