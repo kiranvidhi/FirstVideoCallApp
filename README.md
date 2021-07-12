@@ -1,5 +1,4 @@
-# FirstVideoCallApp
-https://kiranvidhi.github.io/FirstVideoCallApp/login.html
+# TEAMS CLONE
 
 As with each passing day the requirement of Real Time Communication is growing, this project intends to meet the same. The project is a web application which allows you to connect with people around the globe.
 
@@ -25,13 +24,13 @@ The video call and screen sharing feature is implemented using the Agora SDK and
 
 
 
-  ***Below is the table which shows the reason behind my preference towards SDK***:
+  * #### *Below is the table which shows the reason behind my preference towards SDK*:
   
   ![matrix](https://user-images.githubusercontent.com/77210099/125351597-e6f27a80-e37d-11eb-9b2a-5bf9c9b8bf5a.PNG)
   
-  ***Below is the component diagram which shows the tech used in the project***:
+  * #### *Below is the component diagram which shows the tech used in the project*:
   
-  ![Component diagram_1](https://user-images.githubusercontent.com/77210099/125353296-fc68a400-e37f-11eb-92c8-784dc41b445e.png)
+  ![Component diagram_2](https://user-images.githubusercontent.com/77210099/125357020-a9ddb680-e384-11eb-9f5a-8fc18ff05e0e.png)
   
   ### Steps to use the app :
   
@@ -53,7 +52,7 @@ The video call and screen sharing feature is implemented using the Agora SDK and
   
    ![Step 5](https://user-images.githubusercontent.com/77210099/125355187-566a6900-e382-11eb-8e7f-ccc86065da64.PNG)
    
-   After completing the above mentioned steps, you would be able to perform video calls and chat with people.
+   After completing the above mentioned steps, you would be able to perform video call and chat with people.
    
    **6. To share the screen, click on the Desktop button in the top left corner followed by clicking on the screen and then click on Share.**
 
