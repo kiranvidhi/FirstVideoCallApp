@@ -104,29 +104,30 @@ client.on("unmute-video", function (evt) {
    });
  }
 
-function joinChannel(){
+function joinChannel(uid){
 // Join a channel
 client.join(null, "myChannel1", null, (uid)=>{
   // Create a local stream
-  let localStream = AgoraRTC.createStream({
-    audio: true,
-    video: true,
-});
+      let localStream = AgoraRTC.createStream({
+      audio: true,
+      video: true,
+  });
 
 
 
-// Initialize the local stream
-localStream.init(()=>{
-    // Play the local stream
-    localStream.play("me");
-    // Publish the local stream
-    client.publish(localStream, handleError);
-    enableUiControls(localStream);
-    localStreams.camera.stream = localStream;
-    localStreams.camera.id = uid;
-    console.log(localStreams);
+  // Initialize the local stream
+  localStream.init(()=>{
+      // Play the local stream
+      console.log("initializibg local stream");
+      localStream.play("me");
+      // Publish the local stream
+      client.publish(localStream, handleError);
+      enableUiControls(localStream);
+      localStreams.camera.stream = localStream;
+      localStreams.camera.id = uid;
+  }, handleError);
 }, handleError);
-}, handleError);
+
 }
 
 //Publish the remote stream
@@ -150,15 +151,11 @@ client.on("stream-subscribed", function(evt){
     mainStreamId = streamId;
     addScreenStream(streamId);
     stream.play(streamId);
-    console.log("stream:");
-    console.log(stream);
   }else{
     console.log("Subscribe remote stream successfully: " + streamId);
     mainStreamId = streamId;
     addVideoStream(streamId);
     stream.play(streamId);
-    console.log("stream:");
-    console.log(stream);
   }
 });
 
@@ -269,6 +266,8 @@ function leaveChannel() {
     localStreams.camera.stream.stop() // stop the camera stream playback
     client.unpublish(localStreams.camera.stream); // unpublish the camera stream
     localStreams.camera.stream.close(); // clean up and close the camera stream
+    closeLocalStream(true);
+    enableUiControls(localStreams.camera.stream);
     $("#remote-container").empty() // clean up the remote feeds
     //disable the UI elements
     $("#exit-btn").prop("disabled", true);
@@ -299,13 +298,10 @@ function otherScreenShareInactiveStatus(){
 function bigChatBox() {
   $('.chat').css({
     'right': '400px',
-    'bottom': '200px'
+    'bottom': '150px',
+    'overflow': 'visible'
     });
   $('#chat_fullscreen').css({
-    'height':'550px'
+    'height':'100%'
     });
-  $('.chat.is-visible').css({
-    'height' : '550px',
-    'width': '600px'
-  });
 }

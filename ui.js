@@ -5,7 +5,6 @@ function enableUiControls(localStream) {
   $("#screen-share-btn").prop("disabled", false);
   $("#exit-btn").prop("disabled", false);
 
-
   $("#mic-btn").click(function(){
     toggleMic(localStream);
   });
@@ -90,4 +89,7 @@ function toggleVideo(localStream) {
     localStream.disableVideo(); // disable the local video
     toggleVisibility("#no-local-video", true); // show the user icon when video is disabled
   }
+}
+function closeLocalStream(booleanValue){
+  return booleanValue;
 }

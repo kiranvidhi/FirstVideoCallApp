@@ -99,7 +99,7 @@
   .chat {
     position: fixed;
     right: 400px;
-    bottom: 200px;
+    bottom: 150px;
     font-size: 12px;
     line-height: 22px;
     font-family: 'Roboto';
@@ -116,7 +116,7 @@
 
 
   .chat_header {
-      font-size: 13px;
+      font-size: 10px;
       font-family: 'Roboto';
       font-weight: 500;
       color: #f3f3f3;
