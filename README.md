@@ -57,8 +57,7 @@ The video call and screen sharing feature is implemented using the Agora SDK and
    
    **6. To share the screen, click on the Desktop button in the top left corner followed by clicking on the screen and then click on Share.**
 
-
-
+   ![Step 6](https://user-images.githubusercontent.com/77210099/125356404-ca594100-e383-11eb-9201-0329d9b342e7.PNG)
 
 
 ### Resources :
