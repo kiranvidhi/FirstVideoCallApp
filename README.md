@@ -35,11 +35,23 @@ The video call and screen sharing feature is implemented using the Agora SDK and
   
   ### Steps to use the app :
   
-   1. Click on the URL : https://kiranvidhi.github.io/FirstVideoCallApp/login.html
-   2. Click on Enter the Room.
-   3. Enter the UID (each user should have a different UID) and a Username and click on join channel.
-   4. Click on the Start Video Call button.
-   5. Click on the Allow button to give the permission to access your camera and microphone.
+  1. Click on the URL : https://kiranvidhi.github.io/FirstVideoCallApp/login.html
+  
+  2. Click on Enter the Room.
+   
+   ![Step 2](https://user-images.githubusercontent.com/77210099/125355126-4488c600-e382-11eb-84ca-0d4f8653532a.PNG)
+  
+  3. Enter the UID (each user should have a different UID) and a Username and click on join channel.
+   
+   ![Step 3](https://user-images.githubusercontent.com/77210099/125355145-4b173d80-e382-11eb-8462-891a80374f32.PNG)
+  
+  4. Click on the Start Video Call button.
+  
+   ![Step 4](https://user-images.githubusercontent.com/77210099/125355172-523e4b80-e382-11eb-99a6-82daa1f37dd2.PNG)
+  
+  5. Click on the Allow button to give the permission to access your camera and microphone.
+  
+   ![Step 5](https://user-images.githubusercontent.com/77210099/125355187-566a6900-e382-11eb-8e7f-ccc86065da64.PNG)
    
    After completing the above mentioned steps, you would be able to perform video calls and chat with people.
    
