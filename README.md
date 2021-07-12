@@ -30,5 +30,10 @@ The video call and screen sharing feature is implemented using the Agora SDK and
   ![matrix](https://user-images.githubusercontent.com/77210099/125351597-e6f27a80-e37d-11eb-9b2a-5bf9c9b8bf5a.PNG)
   
   ***Below is the component diagram which shows the tech used in the project***:
+  
+  ![Component diagram](https://user-images.githubusercontent.com/77210099/125351986-6122ff00-e37e-11eb-8f52-68e135ec70a7.png)
+  
+  ### Steps to use the app :
+   1. Click on the URL : https://kiranvidhi.github.io/FirstVideoCallApp/login.html
 
 
