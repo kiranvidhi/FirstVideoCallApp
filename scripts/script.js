@@ -297,7 +297,7 @@ function otherScreenShareInactiveStatus(){
 //create a function which brings the chat box to its initial dimension.
 function bigChatBox() {
   $('.chat').css({
-    'right': '400px',
+    'right': '300px',
     'bottom': '150px',
     'overflow': 'visible'
     });
