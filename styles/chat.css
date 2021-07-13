@@ -620,7 +620,7 @@
   @media (max-width:1350px){
     .chat.is-visible {
       width: 60%;
-      height:85%;
+      height:55%;
     }
 
     .chat{
