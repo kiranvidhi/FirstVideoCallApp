@@ -637,5 +637,8 @@
   .chat_field.chat_message{
       width: 400px;
     }
+    #chat_fulscreen{
+      height : 50%;
+    }
 
   }
