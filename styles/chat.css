@@ -620,13 +620,13 @@
   @media (max-width:1350px){
     .chat.is-visible {
       width: 60%;
-      height:55%;
+      height:35%;
     }
 
     .chat{
       width: 50%;
-      right: 75px;
-      bottom: 100px;
+      right: 25px;
+      bottom: 500px;
     }
 
     .chatUi_field {
